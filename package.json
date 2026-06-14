@@ -34,5 +34,9 @@
   "category": "billing",
   "confidence": 0.62,
   "needsReview": true
-}
+}{
+  "primaryCategory": "billing",
+  "secondaryCategories": ["cancellation", "refund"]
+}}{
+  "priority": "critical"
 }
