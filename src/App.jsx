@@ -45,3 +45,12 @@ const getPriority = (message) => {
 
   return "Normal";
 };
+const result = await response.json(); 
+const result = await response.json();
+
+const priority = getPriority(message);
+
+setTriageResult({
+  ...result,
+  priority
+});
