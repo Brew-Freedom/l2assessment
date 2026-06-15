@@ -22,4 +22,26 @@ function App() {
 }
 
 export default App
-find src -type f 
+const getPriority = (message) => {
+  const text = message.toLowerCase();
+
+  const urgentKeywords = [
+    "urgent",
+    "immediately",
+    "asap",
+    "refund",
+    "cancel",
+    "account locked",
+    "can’t login",
+    "cannot log in",
+    "down",
+    "outage",
+    "broken"
+  ];
+
+  if (urgentKeywords.some(word => text.includes(word))) {
+    return "High";
+  }
+
+  return "Normal";
+};
