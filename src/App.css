@@ -1,1 +1,19 @@
 /* Minimal styles - most styling is done with Tailwind */
+try {
+  const response = await fetch("/api/triage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message })
+  });
+
+  if (!response.ok) throw new Error("API error");
+
+  const result = await response.json();
+  ...
+} catch (error) {
+  setTriageResult({
+    category: "Error",
+    priority: "Normal",
+    message: "Something went wrong. Please try again."
+  });
+}
